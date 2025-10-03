@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   isalpha.c                                          :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.c      +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:00:26 by digonza2          #+#    #+#             */
-/*   Updated: 2025/09/29 12:35:00 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/03 13:06:45 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdio.h>*/
+
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
@@ -28,5 +29,5 @@ int	main(void)
 	d = ft_isalpha(c);
 	printf("%d", d);
 	return (0);
-}
-*/
+}*/
+s
