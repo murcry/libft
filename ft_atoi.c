@@ -26,8 +26,8 @@ int ft_atoi(const char *nptr)
         sgn *= -1;
         i++;
     }
-    if (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v'
-        || nptr[i] == '\f' || nptr[i] == '\r')
+    while (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v' || nptr[i] == '\f'
+        || nptr[i] == '\r' || nptr[i] == ' ' || nptr[i] == '+')
         i++;
     while (nptr[i] >= '0' && nptr[i] <= '9')
     {
@@ -38,12 +38,12 @@ int ft_atoi(const char *nptr)
     }
     return (num * sgn);
 }
-int main(void)
+/*int main(void)
 {
     int     num;
-    char    number[] = "       6";
+    char    number[] = "+56";
 
     num = ft_atoi(number);
     printf("%d", num);
     return (0);
-}
+}*/
