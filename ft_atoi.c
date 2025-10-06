@@ -26,18 +26,22 @@ int ft_atoi(const char *nptr)
         sgn *= -1;
         i++;
     }
+    if (nptr[i] == '\t' || nptr[i] == '\n' || nptr[i] == '\v'
+        || nptr[i] == '\f' || nptr[i] == '\r')
+        i++;
     while (nptr[i] >= '0' && nptr[i] <= '9')
     {
         num = num + nptr[i] - '0';
-        num *= 10;
+        if(nptr[i + 1] >= '0' && nptr[i] <= '9')
+            num *= 10;
         i++;
     }
-    return ((num/10) * sgn);
+    return (num * sgn);
 }
 int main(void)
 {
     int     num;
-    char    number[] = "-146";
+    char    number[] = "       6";
 
     num = ft_atoi(number);
     printf("%d", num);
