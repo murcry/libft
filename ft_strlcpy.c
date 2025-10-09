@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:40:31 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 12:53:29 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/09 17:19:18 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	while(i < size)
 	{
+        
 	}
-	
 	return (ft_strlen(src));
 }

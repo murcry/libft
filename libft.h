@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 16:07:32 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/09 16:18:53 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int		ft_toupper(int c);
  * it returns c
  */
 
-int		ft_tolower(int c);										//TODO
+int		ft_tolower(int c);
 
 /*
  * The strchr() function returns a pointer to the first occurrence of the 
