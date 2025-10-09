@@ -1,37 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/09 12:58:46 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 15:55:22 by digonza2         ###   ########.fr       */
+/*   Created: 2025/10/09 16:03:40 by digonza2          #+#    #+#             */
+/*   Updated: 2025/10/09 16:03:40 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char 	*ft_strrchr(const char *s, int c)
 {
-	int	change;
-	
-	if (c >= 'a' && c <= 'z')
-	{
-		change = 'a' - 'A';
-		c -= change;
-	}
-	return (c);
+    
 }
-/*
-int	main(void)
-{
-	int		letra;
-	char	up_let;
-	
-	letra = '7';
-	up_let = ft_toupper(letra);
-	printf("%c",up_let);
-	return (0);
-}*/
-	
