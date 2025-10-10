@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:54:28 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 12:56:09 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:05:42 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,4 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	
 }

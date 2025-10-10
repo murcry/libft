@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:58:46 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 16:18:29 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/10 11:49:52 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_toupper(int c)
 {
 	int	change;
-	
+
 	change = 'a' - 'A';
 	if (c >= 'a' && c <= 'z')
 		c -= change;

@@ -6,13 +6,12 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:03:40 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 16:03:40 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:05:53 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char 	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    
 }

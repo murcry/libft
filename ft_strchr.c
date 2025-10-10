@@ -6,11 +6,10 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:09:47 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 16:09:47 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:05:37 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char 	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-
 }

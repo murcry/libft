@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:03:25 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 16:17:38 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/10 11:50:15 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_tolower(int c)
 {
 	int	change;
-	
+
 	change = 'a' - 'A';
-	if (c >= 'A' && c <= 'Z')	
+	if (c >= 'A' && c <= 'Z')
 		c += change;
 	return (c);
 }

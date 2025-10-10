@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/09 16:18:53 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/10 13:06:15 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,9 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
-size_t  ft_strlcpy(char *dest, const char *src, size_t size);	//TODO
+size_t	ft_strlcpy(char *dest, const char *src, size_t size);			//TODO
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size);	//TODO
+size_t	ft_strlcat(char *dst, const char *src, size_t size);			//TODO
 
 /*
  * If  c is a lowercase letter, toupper() returns its uppercase equivalent, 
@@ -62,17 +62,78 @@ int		ft_tolower(int c);
  * character c in the string s
  */
 
-char 	*ft_strchr(const char *s, int c);						//TODO
+char	*ft_strchr(const char *s, int c);								//TODO
 
 /*
  * The strrchr() function returns a pointer to the last occurrence of the
  * character c in the string s
  * */
 
-char	*ft_strrchr(const char *s, int c);						//TODO
+char	*ft_strrchr(const char *s, int c);								//TODO
 
-int     ft_atoi(const char *nptr);
+/*
+ * The  strcmp()  function compares the two strings s1 and s2. The  strcmp()
+ * function compares the two strings s1 and s2. The strcmp() and strncmp()
+ * functions return an integer less than, equal to, or greater than zero if s1
+ * (or the first n bytes thereof) is found, respectively, to be less than, to
+ * match, or be greater than s2.
+*/
 
-char    *ft_itoa(int n);										//TODO
+int		ft_strncmp(const char *s1, const char *s2, size_t n);			//TODO
+
+/*
+ * The memchr() function scans the initial n bytes of the memory area pointed
+ * to by s for the first instance of c. Both c and the bytes of the memory
+ * area pointed to by s are interpreted as unsigned char. The  memchr() and
+ * memrchr() functions return a pointer to the matching byte or NULL if the
+ * character does not occur in the given memory area.
+ */
+
+void	*ft_memchr(const void *s, int c, size_t n);						//TODO
+
+/*
+ * The  memcmp()  function  compares the first n bytes (each interpreted as
+ * unsigned char) of the memory areas s1 and s2. The memcmp() function returns
+ * an integer less than, equal to, or greater than zero if  the first  n bytes
+ * of s1 is found, respectively, to be less than, to match, or be greater than
+ * the first n bytes of s2.
+ * For a nonzero return value, the sign is determined by the sign of the
+ * difference  between the first pair of bytes (interpreted as unsigned char)
+ * that differ in s1 and s2.
+ * If n is zero, the return value is zero.
+ */
+
+int		ft_memcmp(const void *s1, const void *s2, size_t n);			//TODO
+
+char	*ft_strnstr(const char *big, const char *little, size_t len);	//TODO
+
+int		ft_atoi(const char *nptr);
+
+/*
+ * The calloc() function allocates memory for an array of nmemb elements of size
+ * bytes  each and returns a pointer to the allocated memory. The memory is set
+ * to zero. If nmemb or size is 0, then calloc() returns either NULL, or a unique
+ * pointer value that can later be successfully  passed  to  free().If the
+ * multiplication of nmemb and size would result in integer overflow, then
+ * calloc() returns an error. By contrast, an integer overflow  would not be
+ * detected in the following call to malloc(), with the result that
+ * an incorrectly sized block of memory would be allocated:
+ * 	malloc(nmemb * size);
+ */
+
+void	*ft_calloc(size_t nmemb, size_t size);							//TODO
+
+/*
+ * The strdup() function returns a pointer to a new string which is a duplicate
+ * of the string s. Memory for the new string is obtained with malloc(), and
+ * can be freed with free().
+ * On  success, the strdup() function returns a pointer to the duplicated string.
+ * It returns NULL if insufficient memory was available, with errno set to
+ * indicate the cause of the error.
+ */
+
+char	*ft_strdup(const char *s);										//TODO
+
+char	*ft_itoa(int n);												//TODO
 
 #endif
