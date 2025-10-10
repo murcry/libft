@@ -6,11 +6,10 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:40:31 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/10 13:05:47 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/10 17:11:56 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//TODO
 /* The strlcpy() and strlcat() functions copy and concatenate strings re‐
     spectively.  They are designed to be safer, more consistent, and less er‐
     ror prone replacements for strncpy(3) and strncat(3).  Unlike those func‐
@@ -29,6 +28,7 @@
     of dst.  It will append at most size - strlen(dst) - 1 bytes, NUL-termi‐
     nating the result.
 */
+
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
