@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:46:30 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/10 12:07:55 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/12 19:33:40 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_atoi(const char *nptr)
 /*int main(void)
 {
     int     num;
-    char    number[] = "+56";
+    char    number[] = "  +56";
 
     num = ft_atoi(number);
     printf("%d", num);
