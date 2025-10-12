@@ -6,9 +6,11 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:09:47 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/12 19:58:32 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/12 20:21:13 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

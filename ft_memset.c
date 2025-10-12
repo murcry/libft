@@ -6,11 +6,10 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 10:55:03 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/02 18:09:01 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/12 20:20:58 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include <stdio.h>*/
 #include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
