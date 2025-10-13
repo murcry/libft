@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/10 13:06:15 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/13 18:33:08 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,24 @@
 # define LIBFT_H
 # include <stdlib.h>
 
-#include <stdio.h>
-#include <limits.h>
+// #include <stdio.h>
+// #include <limits.h>
+
+/*
+ * The isalpha() function tests for any character for which isupper() or
+ * islower() is true. The value of the argument must be resprensentable as an
+ * unsigned char or the value of EOF.
+ * The isalpha() function return zero if the character tests false and returns
+ * non-zero if the character tests true.
+ */
 
 int		ft_isalpha(int c);
+
+/* The isdigit() function tests for a decimal digit character. The value of the
+ * argument must be representable as an unsigned char or the value of EOF.
+ * The isdigit() function return zero if the character tests false and return
+ * non-zero if the character tests true.
+ */
 
 int		ft_isdigit(int c);
 
@@ -37,7 +51,18 @@ void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
+/*
+ * The strlcpy() function copies up to size - 1 characters from the NUL-
+ * terminated string src to dst, NUL-terminating the result.  
+ */
+
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);			//TODO
+
+/*
+ * The strlcat() function appends the NUL-terminated string src to the end
+ * of dst.  It will append at most size - strlen(dst) - 1 bytes, NUL-
+ * terminating the result.
+  */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);			//TODO
 
@@ -134,6 +159,12 @@ void	*ft_calloc(size_t nmemb, size_t size);							//TODO
 
 char	*ft_strdup(const char *s);										//TODO
 
-char	*ft_itoa(int n);												//TODO
+/*
+ * Allocate (with malloc()) and returns a string representing n. Negative numbers
+ * must be handled.
+ * Returns the string representing n; NULL if the memory allocation failed.
+ */
+
+char	*ft_itoa(int n);
 
 #endif

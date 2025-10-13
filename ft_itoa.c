@@ -6,13 +6,13 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:23:09 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/10 13:05:32 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/13 16:38:04 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	num_size(int n)
+static size_t	num_size(long n)
 {
 	size_t	size;
 
@@ -22,7 +22,7 @@ size_t	num_size(int n)
 		size++;
 		n *= -1;
 	}
-	while (n > 10)
+	while (n >= 10)
 	{
 		n /= 10;
 		size++;
@@ -30,53 +30,45 @@ size_t	num_size(int n)
 	return (size);
 }
 
-int	ft_check_int_min(int n)
-{
-	if (n == INT_MIN)
-		return (1);
-	else
-		return (0);
-}
-
 char	*ft_itoa(int n)
 {
 	char	*num;
 	int		size;
 	int		is_negative;
-	int		is_min_int;
+	long	number;
 
-	size = num_size(n);
+	number = n;
+	size = num_size(number);
 	num = malloc(size + 1);
+	if (!num)
+		return (NULL);
 	is_negative = 0;
-	is_min_int = ft_check_int_min(n);
 	if (n < 0)
 	{
-		n *= -1;
+		number *= -1;
 		num[0] = '-';
 		is_negative = 1;
 	}
-	num[size] = '\0';
-	size--;
+	num[size--] = '\0';
 	while (((size >= 0) && (is_negative == 0)) || ((size > 0)
 			&& (is_negative == 1)))
 	{
-		num[size] = n % 10 + '0';
-		n /= 10;
-		size--;
+		num[size--] = number % 10 + '0';
+		number /= 10;
 	}
 	return (num);
 }
-/*
-int	main(void)
-{
-	int		number;
-	//int     size;
-	char	*numero;
 
-	number = INT_MIN;
-    numero = ft_itoa(number);
-    //size = ft_strlen(numero);
-    printf("%s", numero);
-    //printf("\n%d", size);
-    return (0);
-}*/
+// int	main(void)
+// {
+// 	int		number;
+// 	//int     size;
+// 	char	*numero;
+
+// 	number = 10;
+//     numero = ft_itoa(number);
+//     //size = ft_strlen(numero);
+//     printf("%s", numero);
+//     //printf("\n%d", size);
+//     return (0);
+// }
