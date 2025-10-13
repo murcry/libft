@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:40:31 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/10 17:11:56 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/13 19:54:47 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,30 @@
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
+	size_t	src_size;
 
-	i = 0;
-	while (i < size)
+	src_size = ft_strlen(src);
+	if (src_size + 1 < dstsize)
+		ft_memcpy(dst, src, src_size + 1);
+	else if (dstsize != 0)
 	{
+		ft_memcpy(dst, src, dstsize - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	return (ft_strlen(src));
+	return (src_size);
 }
+
+// int	main(void)
+// {
+// 	char	*ch1 = "ABCDEFGHIJK";
+// 	char	ch2[15];
+// 	size_t	src_len;
+// 	int		i;
+
+// 	i = 0;
+// 	src_len = ft_strlcpy(ch2, ch1, 15);
+// 	printf("%s", ch2);
+// 	return (0);
+// }
