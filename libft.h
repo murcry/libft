@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/14 13:29:30 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/14 17:23:06 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*ft_strchr(const char *s, int c);
  * character c in the string s
  * */
 
-char	*ft_strrchr(const char *s, int c);								//TODO
+char	*ft_strrchr(const char *s, int c);
 
 /*
  * The  strcmp()  function compares the two strings s1 and s2. The  strcmp()
@@ -104,7 +104,7 @@ char	*ft_strrchr(const char *s, int c);								//TODO
  * match, or be greater than s2.
 */
 
-int		ft_strncmp(const char *s1, const char *s2, size_t n);			//TODO
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /*
  * The memchr() function scans the initial n bytes of the memory area pointed
