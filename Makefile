@@ -16,8 +16,8 @@ FUNCTIONS = ft_isalpha.c \
 			ft_atoi.c \
 			ft_itoa.c \
 			ft_strlcpy.c \
-			#ft_strlcat.c \
-			#ft_strchr.c \
+			ft_strlcat.c \
+			ft_strchr.c \
 			#ft_strrchr.c \
 			#ft_strncmp.c \
 			#ft_memchr.c \

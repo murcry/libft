@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/13 19:54:20 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/14 13:29:30 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int		ft_isprint(int c);
 
 size_t	ft_strlen(const char *s);
 
-void	*ft_memset(void *s, int c, size_t n);						//noPACO
+void	*ft_memset(void *s, int c, size_t n);
 
-void	ft_bzero(void *s, size_t n);								//noPACO
+void	ft_bzero(void *s, size_t n);
 
-void	*ft_memcpy(void *dest, const void *src, size_t n);			//noPACO
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
@@ -56,7 +56,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
  * terminated string src to dst, NUL-terminating the result.  
  */
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);	//noPACO
+size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 
 /*
  * The strlcat() function appends the NUL-terminated string src to the end
@@ -64,7 +64,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);	//noPACO
  * terminating the result.
   */
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size);			//TODO
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 /*
  * If  c is a lowercase letter, toupper() returns its uppercase equivalent, 
@@ -87,7 +87,7 @@ int		ft_tolower(int c);
  * character c in the string s
  */
 
-char	*ft_strchr(const char *s, int c);								//TODO
+char	*ft_strchr(const char *s, int c);
 
 /*
  * The strrchr() function returns a pointer to the last occurrence of the

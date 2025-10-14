@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 16:09:47 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/12 20:21:13 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/14 13:39:26 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,4 +14,18 @@
 
 char	*ft_strchr(const char *s, int c)
 {
+	unsigned int	i;
+	char			car;
+
+	car = (char)c;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == car)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (s[i] == car)
+		return ((char *)&s[i]);
+	return (NULL);
 }
