@@ -6,11 +6,17 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:09:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/13 17:17:40 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:10:35 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+ * The isalnum() function tests for any character for which isalpha() or
+ * isdigit() is true. The value of the argument must be representable as an
+ * unsigned char or the value of EOF.
+ */
 
 int	ft_isalnum(int c)
 {

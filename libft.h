@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/14 19:37:49 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:15:11 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,12 @@ int		ft_isalpha(int c);
 
 int		ft_isdigit(int c);
 
+/*
+ * The isalnum() function tests for any character for which isalpha() or
+ * isdigit() is true. The value of the argument must be representable as an
+ * unsigned char or the value of EOF.
+ */
+
 int		ft_isalnum(int c);
 
 int		ft_isascii(int c);
@@ -44,6 +50,11 @@ int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 
 void	*ft_memset(void *s, int c, size_t n);
+
+/*
+ * The bzero() function writes n zeroed bytes to the string s. If n is zero,
+ * bzero() does nothing.
+ */
 
 void	ft_bzero(void *s, size_t n);
 
@@ -114,7 +125,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
  * character does not occur in the given memory area.
  */
 
-void	*ft_memchr(const void *s, int c, size_t n);						//TODO
+void	*ft_memchr(const void *s, int c, size_t n);
 
 /*
  * The  memcmp()  function  compares the first n bytes (each interpreted as
@@ -131,6 +142,11 @@ void	*ft_memchr(const void *s, int c, size_t n);						//TODO
 int		ft_memcmp(const void *s1, const void *s2, size_t n);			//TODO
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);	//TODO
+
+/*
+ * The atoi() function converts the initial portion of the string pointed to by
+ * str to int representation. Convert ASCII string to integer
+ */
 
 int		ft_atoi(const char *nptr);
 

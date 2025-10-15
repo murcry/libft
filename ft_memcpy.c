@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 16:50:18 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/13 17:22:35 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 21:01:21 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-/*
-int	main(void)
+
+/* int	main(void)
 {
 	char	c1[] = "Hola Juan";
 	char	c2[] = "AdiosPaco";
@@ -35,4 +35,4 @@ int	main(void)
 	ft_memcpy(c2, c1, 6);
 	printf("%s", c2);
 	return (0);
-}*/
+} */
