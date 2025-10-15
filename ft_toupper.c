@@ -6,11 +6,17 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:18:36 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/15 21:18:40 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 22:53:30 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+ * If  c is a lowercase letter, toupper() returns its uppercase equivalent, 
+ * if an uppercase representation exists in the current locale.  Otherwise,
+ * it returns c.
+ */
 
 int	ft_toupper(int c)
 {

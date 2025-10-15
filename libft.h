@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/15 21:15:11 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 23:08:27 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@
 
 int		ft_isalpha(int c);
 
-/* The isdigit() function tests for a decimal digit character. The value of the
+/* 
+ * The isdigit() function tests for a decimal digit character. The value of the
  * argument must be representable as an unsigned char or the value of EOF.
  * The isdigit() function return zero if the character tests false and return
  * non-zero if the character tests true.
@@ -43,11 +44,34 @@ int		ft_isdigit(int c);
 
 int		ft_isalnum(int c);
 
+/*
+ * The isascii() function tests for an ASCII character, which is any character
+ * between 0 and octal 0177 inclusive.
+ */
+
 int		ft_isascii(int c);
+
+/*
+ * The isprint() function tests for any printing character, including space.
+ * The value of the argument must representable as an unsigned char or the value
+ * of EOF. The isprint() function returns zero if the character tests false and
+ * returns non-zero if the character tests true.
+ */
 
 int		ft_isprint(int c);
 
+/*
+ * The strlen() function computes the length of the string s. The strlen()
+ * function returns the number of characters that precede the terminating NUL
+ * character.
+ */
+
 size_t	ft_strlen(const char *s);
+
+/*
+ * The memset() function writes len bytes of value c (converted to an unsigned
+ * char) to the string b. The memset() function returns its first argument.
+ */
 
 void	*ft_memset(void *s, int c, size_t n);
 
@@ -58,22 +82,60 @@ void	*ft_memset(void *s, int c, size_t n);
 
 void	ft_bzero(void *s, size_t n);
 
+/*
+ * The memcpy() function copies n bytes from memory area src to memory area dest.
+ * If dest and src overlap, behavior is undefined. Applications in which dest and
+ * src might overlap should use memove() instead. The memcpy() function returns
+ * the original value of dest.
+ */
+
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+
+/*
+ * The memmove() function copies n bytes from string src to string dest.
+ * The two strings may overlap; the copy is always done in a non-destructive
+ *  manner. The memmove() function returns the original value of dest.
+ */
 
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
 /*
- * The strlcpy() function copies up to size - 1 characters from the NUL-
- * terminated string src to dst, NUL-terminating the result.  
+ * The strlcpy() function copy strings with the same input parameters and output
+ * result as snprintf(). It is designed to be safer, more consistent, and less
+ * error prone replacement for the easily misused function strncpy() strlcpy()
+ * take the full size of the destination buffer and guarantee NUL-termination if
+ * there is room. Note that room for the NUL should be included in dstsize. Also
+ * note that strlcpy() only operate on true ''C'' strings. This means that for
+ * strlcpy() src must be NUL-terminated. strlcpy() copies up to dstsize - 1
+ * characters from the string src to dst, NUL-terminating the result if dstsize
+ * is not 0. If the src and dst strings overlap, the behavior is undefined.
+ * The strlcpy() function return the total length of the strings it tried to
+ * create. That means the length of src. If the return value is >= dstsize, the
+ * output string has been truncated. It is the caller's responsibility to handle
+ * this.
  */
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 
 /*
- * The strlcat() function appends the NUL-terminated string src to the end
- * of dst.  It will append at most size - strlen(dst) - 1 bytes, NUL-
- * terminating the result.
-  */
+ * The strlcat() function concatenate strings with the same input parameters and
+ * outuput result as snprintf(). It is designed to be safer, more consistent, and
+ * less error prone replacements for the easily misused function strncat().
+ * strlcat() take the full size of the destination buffer and guarantee
+ * NUL-termination if there is room. Note that room for the NUL should be
+ * included in dstsize. Also note that strlcat() only operate on true ''C''
+ * strings. This means that both src and dst must be NUL-terminated.
+ * strlcat() appends string src to the end of dst. It will append at most
+ * dstsize - strlen(dst) - 1 characters. It will then NUL-terminate, unless
+ * dstsize is 0 or the original dst string was longer than dstsize (in practice
+ * this should not happen as it means that either dstsize is incorrect or that
+ * dst is not a proper string).
+ *  If the src and dst strings overlap, the behavior is undefinded.
+ * Like snprintf(), strlcat() function return the total length of the string it
+ * tried to create. That means the initial length of dst plus the length of src.
+ * If the return value is >= dstsize, the output string has been truncated.
+ * It is the caller's responsibility to handle this.
+ */
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
@@ -103,7 +165,7 @@ char	*ft_strchr(const char *s, int c);
 /*
  * The strrchr() function returns a pointer to the last occurrence of the
  * character c in the string s
- * */
+ */
 
 char	*ft_strrchr(const char *s, int c);
 
@@ -139,7 +201,17 @@ void	*ft_memchr(const void *s, int c, size_t n);
  * If n is zero, the return value is zero.
  */
 
-int		ft_memcmp(const void *s1, const void *s2, size_t n);			//TODO
+int		ft_memcmp(const void *s1, const void *s2, size_t n);
+
+/*
+ * The strnstr() function locates the first occurence of the null-terminated
+ * string little in the string big, where not more than len characters are
+ * searched.
+ * Characters that appear after a '\0' character are not searched.
+ * If little is an empty string, big is returned; if little occurs nowhere in
+ * big, NULL is returned; otherwise a pointer to the first character of the
+ * first occurence of little is returned.
+ */
 
 char	*ft_strnstr(const char *big, const char *little, size_t len);	//TODO
 

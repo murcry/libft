@@ -6,30 +6,27 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:40:31 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/13 19:54:47 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 22:48:13 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* The strlcpy() and strlcat() functions copy and concatenate strings re‐
-    spectively.  They are designed to be safer, more consistent, and less er‐
-    ror prone replacements for strncpy(3) and strncat(3).  Unlike those func‐
-    tions, strlcpy() and strlcat() take the full size of the buffer (not just
-    the length) and guarantee to NUL-terminate the result (as long as size is
-    larger than 0 or, in the case of strlcat(), as long as there is at least
-    one byte free in dst).  Note that a byte for the NUL should be included
-    in size.  Also note that strlcpy() and strlcat() only operate on true “C”
-    strings.  This means that for strlcpy() src must be NUL-terminated and
-    for strlcat() both src and dst must be NUL-terminated.
-
-    The strlcpy() function copies up to size - 1 characters from the NUL-ter‐
-    minated string src to dst, NUL-terminating the result.
-
-    The strlcat() function appends the NUL-terminated string src to the end
-    of dst.  It will append at most size - strlen(dst) - 1 bytes, NUL-termi‐
-    nating the result.
-*/
-
 #include "libft.h"
+
+/*
+ * The strlcpy() function copy strings with the same input parameters and output
+ * result as snprintf(). It is designed to be safer, more consistent, and less
+ * error prone replacement for the easily misused function strncpy() strlcpy()
+ * take the full size of the destination buffer and guarantee NUL-termination if
+ * there is room. Note that room for the NUL should be included in dstsize. Also
+ * note that strlcpy() only operate on true ''C'' strings. This means that for
+ * strlcpy() src must be NUL-terminated. strlcpy() copies up to dstsize - 1
+ * characters from the string src to dst, NUL-terminating the result if dstsize
+ * is not 0. If the src and dst strings overlap, the behavior is undefined.
+ * The strlcpy() function return the total length of the strings it tried to
+ * create. That means the length of src. If the return value is >= dstsize, the
+ * output string has been truncated. It is the caller's responsibility to handle
+ * this.
+ */
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
@@ -46,15 +43,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return (src_size);
 }
 
-// int	main(void)
-// {
-// 	char	*ch1 = "ABCDEFGHIJK";
-// 	char	ch2[15];
-// 	size_t	src_len;
-// 	int		i;
+/* int	main(void)
+{
+	char	*ch1 = "ABCDEFGHIJK";
+	char	ch2[15];
+	size_t	src_len;
+	int		i;
 
-// 	i = 0;
-// 	src_len = ft_strlcpy(ch2, ch1, 15);
-// 	printf("%s", ch2);
-// 	return (0);
-// }
+	i = 0;
+	src_len = ft_strlcpy(ch2, ch1, 15);
+	printf("%s", ch2);
+	return (0);
+} */

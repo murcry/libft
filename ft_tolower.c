@@ -6,11 +6,17 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:03:25 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/10 11:50:15 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 22:53:44 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+ * If  c is an uppercase letter, tolower() returns its lowercase equivalent,
+ * if a lowercase representation exists in the current locale.  Otherwise,
+ * it returns c
+ */
 
 int	ft_tolower(int c)
 {

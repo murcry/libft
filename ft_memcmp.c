@@ -6,9 +6,11 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 20:27:01 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/15 20:55:16 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/15 22:56:01 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 /*
  * The  memcmp()  function  compares the first n bytes (each interpreted as
@@ -21,8 +23,6 @@
  * that differ in s1 and s2.
  * If n is zero, the return value is zero.
  */
-
-#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
