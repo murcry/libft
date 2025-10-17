@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/17 13:00:01 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/17 17:05:01 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,7 +234,7 @@ int		ft_atoi(const char *nptr);
  * 	malloc(nmemb * size);
  */
 
-void	*ft_calloc(size_t nmemb, size_t size);	//TIMEOUT
+void	*ft_calloc(size_t nmemb, size_t size);
 
 /*
  * The strdup() function returns a pointer to a new string which is a duplicate
@@ -254,5 +254,26 @@ char	*ft_strdup(const char *s);	//TODO
  */
 
 char	*ft_itoa(int n);
+
+/*
+ * Allocate (with malloc()) and return a new string from the string s.
+ * This new string starts at index 'start' and has a maximum size of 'len'.
+ * s: string from which to extract the new string
+ * start: start index of the new string in the string 's'
+ * len: maximum size of the new string
+ * ft_substr() returns the new string; NULL if the memory allocation failed.
+ */
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
+/*
+ * Allocate (with malloc()) and returns a new string resulting from the
+ * concatenation of s1 and s2.
+ * s1: prefix string
+ * s2: suffix string
+ * ft_strjoin() returns the new string; NULL if the memory allocation failed.
+ */
+
+char	*ft_strjoin(char const *s1, char const *s2);
 
 #endif
