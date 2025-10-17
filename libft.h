@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/15 23:08:27 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/17 13:00:01 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,7 +213,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
  * first occurence of little is returned.
  */
 
-char	*ft_strnstr(const char *big, const char *little, size_t len);	//TODO
+char	*ft_strnstr(const char *big, const char *little, size_t len);
 
 /*
  * The atoi() function converts the initial portion of the string pointed to by
@@ -234,7 +234,7 @@ int		ft_atoi(const char *nptr);
  * 	malloc(nmemb * size);
  */
 
-void	*ft_calloc(size_t nmemb, size_t size);							//TODO
+void	*ft_calloc(size_t nmemb, size_t size);	//TIMEOUT
 
 /*
  * The strdup() function returns a pointer to a new string which is a duplicate
@@ -245,7 +245,7 @@ void	*ft_calloc(size_t nmemb, size_t size);							//TODO
  * indicate the cause of the error.
  */
 
-char	*ft_strdup(const char *s);										//TODO
+char	*ft_strdup(const char *s);	//TODO
 
 /*
  * Allocate (with malloc()) and returns a string representing n. Negative numbers

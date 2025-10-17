@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/10/17 11:55:15 by digonza2          #+#    #+#              #
+#    Updated: 2025/10/17 12:35:58 by digonza2         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 NAME = libft.a
 
@@ -22,8 +33,8 @@ FUNCTIONS = ft_isalpha.c \
 			ft_strncmp.c \
 			ft_memchr.c \
 			ft_memcmp.c \
-			#ft_strnstr.c \
-			#ft_calloc.c \
+			ft_strnstr.c \
+			ft_calloc.c \
 			#ft_strdup.c
 
 OBJECTS = $(FUNCTIONS:.c=.o)
