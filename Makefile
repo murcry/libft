@@ -6,7 +6,7 @@
 #    By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/17 11:55:15 by digonza2          #+#    #+#              #
-#    Updated: 2025/10/17 18:14:33 by digonza2         ###   ########.fr        #
+#    Updated: 2025/10/17 20:56:33 by digonza2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,8 @@ FUNCTIONS = ft_isalpha.c \
 			ft_calloc.c \
 			ft_strdup.c \
 			ft_substr.c \
-			ft_strjoin.c
+			ft_strjoin.c \
+			#ft_strtrim.c
 
 OBJECTS = $(FUNCTIONS:.c=.o)
 

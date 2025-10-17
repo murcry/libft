@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/17 17:05:01 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/17 19:45:08 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -248,14 +248,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);	//TODO
 
 /*
- * Allocate (with malloc()) and returns a string representing n. Negative numbers
- * must be handled.
- * Returns the string representing n; NULL if the memory allocation failed.
- */
-
-char	*ft_itoa(int n);
-
-/*
  * Allocate (with malloc()) and return a new string from the string s.
  * This new string starts at index 'start' and has a maximum size of 'len'.
  * s: string from which to extract the new string
@@ -275,5 +267,24 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
  */
 
 char	*ft_strjoin(char const *s1, char const *s2);
+
+/*
+ * Allocate (with malloc()) and returns a copy of s1, without the characters
+ * specified in set at the beginning and the end of s1.
+ * s1: string to trim
+ * set: characters to trim
+ * ft_strtrim() returns a trimmed copy of s1; NULL if the memory allocation
+ * failed.
+ */
+
+char	*ft_strtrim(char const *s1, char const *set);
+
+/*
+ * Allocate (with malloc()) and returns a string representing n. Negative numbers
+ * must be handled.
+ * Returns the string representing n; NULL if the memory allocation failed.
+ */
+
+char	*ft_itoa(int n);
 
 #endif
