@@ -6,79 +6,46 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:45:53 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/17 20:56:03 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/20 13:09:55 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * This auxiliar function creates an empty string and returns this empty string
- */
-
-static char	*create_empty_str(void)
-{
-	char	*empty;
-
-	empty = malloc(1 * sizeof(char));
-	if (empty == NULL)
-		return (NULL);
-	empty[0] = '\0';
-	return (empty);
-}
-
-/*
- * It returns the total size of the new string to be createdfor the function
- * ft_strtrim().
- */
-
-static size_t	get_size(char const *s1, char const *set)
-{
-	unsigned int	i;
-	unsigned int	j;
-	size_t			new_len;
-
-	i = 0;
-	j = 0;
-	while (set[j])
-	{
-		while (s1[i])
-		{
-			if (s1[i] == set[j])
-				new_len++;
-			i++;
-		}
-		i = 0;
-		j++;
-	}
-	return (new_len);
-}
-
-static void	create_trim(char const *s1, char const *set, char *new)
+static int	is_char_in_str(const char c, const char *set)
 {
 	int	i;
-	int	j;
-	int	equals;
-	int	z;
 
 	i = 0;
-	j = 0;
-	z = 0;
-	equals = 0;
-	while (s1[i])
+	while (set[i])
 	{
-		while (set[j] && equals == 0)
-		{
-			if (s1[i] == set[j])
-				equals = 1;
-			j++;
-		}
-		j = 0;
-		if (equals == 0)
-			new[z++] = s1[i];
+		if (set[i] == c)
+			return (1);
 		i++;
 	}
-	new[z] = '\0';
+	return (0);
+}
+
+static size_t	get_start(const char *s1, const char *set)
+{
+	size_t	i;
+
+	i = 0;
+	while (s1[i] && is_char_in_str(s1[i], set) == 1)
+		i++;
+	return (i);
+}
+
+static size_t	get_end(const char *s1, const char *set)
+{
+	int	j;
+
+	j = (int) ft_strlen(s1) - 1;
+	while (s1[j] && is_char_in_str(s1[j], set) == 1)
+		j--;
+	if (j < 0)
+		j = 0;
+	return (j);
 }
 
 /*
@@ -92,19 +59,28 @@ static void	create_trim(char const *s1, char const *set, char *new)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	new_len;
+	size_t	start;
+	size_t	end;
+	size_t	i;
 	char	*new;
 
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	if (s1[0] == '\0' || set[0] == '\0')
-		return (create_empty_str());
-	new_len = get_size(s1, set);
-	if (new_len == ft_strlen(s1) || new_len == 0)
-		return (create_empty_str());
-	new = malloc(new_len + 1);
+	start = get_start(s1, set);
+	end = get_end(s1, set);
+	if (s1[0] == '\0' || start > end)
+		return (ft_strdup(""));
+	if (set[0] == '\0' || (start == 0 && end == ft_strlen(s1) - 1))
+		return (ft_strdup(s1));
+	new = malloc(end - start + 1 + 1);
 	if (new == NULL)
 		return (NULL);
-	create_trim(s1, set, new);
+	i = 0;
+	while (i < end - start + 1)
+	{
+		new[i] = s1[start + i];
+		i++;
+	}
+	new[i] = '\0';
 	return (new);
 }

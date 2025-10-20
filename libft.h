@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/17 19:45:08 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/20 13:27:33 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -280,8 +280,20 @@ char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 
 /*
- * Allocate (with malloc()) and returns a string representing n. Negative numbers
- * must be handled.
+ * Allocate (with malloc()) and returns an array of strings obtained by
+ * splittings with the character c, used as delimiter.
+ * The returned array must be NUL-terminated.
+ * s: string to split
+ * c: delimiter character
+ * ft_split() returns an array of strings resulting from the splitting of s;
+ * NULL if the memory allocation failed.
+ */
+
+char	**ft_split(char const *s, char c);
+
+/*
+ * Allocate (with malloc()) and returns a string representing n. Negative
+ * numbers must be handled.
  * Returns the string representing n; NULL if the memory allocation failed.
  */
 
