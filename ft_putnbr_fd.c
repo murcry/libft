@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 17:13:59 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/21 17:23:25 by digonza2         ###   ########.fr       */
+/*   Created: 2025/10/21 17:36:34 by digonza2          #+#    #+#             */
+/*   Updated: 2025/10/21 18:06:04 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * Outputs the string 's' to the given file descriptor.
- * s: The string to output.
+ * Outputs the integer 'n' to the given file descriptor.
+ *
+ * n: The integer to output.
  * fd: The file descriptor on which to write.
- * Returns nothing.
  */
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		write(fd, &s[i++], 1);
+	if (n == INT_MI)
 }

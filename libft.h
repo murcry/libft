@@ -6,16 +6,17 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/21 16:21:14 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/21 18:06:44 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <unistd.h>
+# include <limits.h>
 
 // #include <stdio.h>
-// #include <limits.h>
 
 /*
  * The isalpha() function tests for any character for which isupper() or
@@ -320,5 +321,40 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
  */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+
+/*
+ * Outputs the character ’c’ to the given file descriptor.
+ * c: The character to output.
+ * fd: The file descriptor on which to write.
+ * Returns nothing.
+ */
+
+void	ft_putchar_fd(char c, int fd);
+
+/*
+ * Outputs the string 's' to the given file descriptor.
+ * s: The string to output.
+ * fd: The file descriptor on which to write.
+ * Returns nothing.
+ */
+
+void	ft_putstr_fd(char *s, int fd);
+
+/*
+ * Outputs the string 's' to the given file descriptor followed by a newline.
+ * s: The string to output.
+ * fd: The file descriptor on which to write.
+ * Returns nothing
+ */
+
+void	ft_putendl_fd(char *s, int fd);
+
+/*
+ * Outputs the integer 'n' to the given file descriptor.
+ * n: The integer to output.
+ * fd: The file descriptor on which to write.
+ */
+
+void	ft_putnbr_fd(int n, int fd);
 
 #endif
