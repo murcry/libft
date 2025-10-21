@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/20 13:27:33 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:01:42 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -298,5 +298,16 @@ char	**ft_split(char const *s, char c);
  */
 
 char	*ft_itoa(int n);
+
+/*
+ * This function iterates through the string 's', applying 'f' to each
+ * character and its index, and stores the results in a newly allocated string.
+ * s: The string to iterate over.
+ * f: The function to apply to each character.
+ * Returns a pointer to the new string created from the successive applications
+ * of 'f', or NULL if the memory allocation fails.
+ */
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 #endif

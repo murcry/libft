@@ -6,7 +6,7 @@
 #    By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/17 11:55:15 by digonza2          #+#    #+#              #
-#    Updated: 2025/10/21 14:53:57 by digonza2         ###   ########.fr        #
+#    Updated: 2025/10/21 15:15:34 by digonza2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,12 @@ FUNCTIONS = ft_isalpha.c \
 			ft_strtrim.c \
 			ft_split.c \
 			ft_itoa.c \
-			#ft_strmapi.c
+			ft_strmapi.c \
+			#ft_striteri.c \
+			#ft_putchar_fd.c \
+			#ft_putstr_fd \
+			#ft_putendl_fd \
+			#ft_putnbr_fd \
 
 OBJECTS = $(FUNCTIONS:.c=.o)
 

@@ -6,12 +6,12 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:15:02 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/21 14:51:34 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/21 15:02:51 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+// #include <stdio.h>
 
 /*
  * Counts the number of words in a string, separated by a delimiter.
@@ -33,7 +33,7 @@ static unsigned int	count_elements(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != c && s[i] != '\0')
+		if (s[i])
 			count++;
 		while (s[i] != c && s[i] != '\0')
 			i++;
@@ -82,7 +82,7 @@ static char	*ft_scissors(size_t start, size_t end, const char *s)
  * list: The array of strings to be freed.
  * elements_num: The number of elements that were successfully allocated
  * in the list before the failure.
- * Returns nothing.
+ * Returns NULL.
  */
 
 static char	**ft_free_all(char **list, size_t elements_num)
@@ -114,7 +114,7 @@ static char	**ft_fill_list(char **list, const char *s, char c)
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i] != c && s[i] != '\0')
+		if (s[i])
 		{
 			start = i;
 			while (s[i] != c && s[i] != '\0')
