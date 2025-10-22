@@ -6,7 +6,7 @@
 #    By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/17 11:55:15 by digonza2          #+#    #+#              #
-#    Updated: 2025/10/21 17:54:49 by digonza2         ###   ########.fr        #
+#    Updated: 2025/10/22 13:12:44 by digonza2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,21 @@ FUNCTIONS = ft_isalpha.c \
 			ft_putchar_fd.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
-			ft_putnbr_fd.c \
+			ft_putnbr_fd.c
+
+BONUS_FUNCTIONS =	#ft_lstnew_bonus.c \
+					#ft_lstadd_front_bonus.c \
+					#ft_lstsize_bonus.c \
+					#ft_lstlast_bonus.c \
+					#ft_lstadd_back_bonus.c \
+					#ft_lstdelone_bonus.c \
+					#ft_lstclear_bonus.c \
+					#ft_lstiter_bonus.c \
+					#ft_lstmap_bonus.c
 
 OBJECTS = $(FUNCTIONS:.c=.o)
+
+BONUS_OBJECTS = $(BONUS_FUNCTIONS:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
 CC = cc
@@ -57,13 +69,18 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $(OBJECTS)
 
+bonus: $(OBJECTS) $(BONUS_OBJECTS)
+	ar rcs $(NAME) $(OBJECTS) $(BONUS_OBJECTS)
+
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 clean:
-	rm -rf *.o
+	rm -rf $(OBJECTS) $(BONUS_OBJECTS)
 
 fclean: clean
 	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all bonus clean fclean re

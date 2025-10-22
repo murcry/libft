@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/21 18:06:44 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/22 12:49:25 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <limits.h>
 
 // #include <stdio.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}					t_list;
 
 /*
  * The isalpha() function tests for any character for which isupper() or
