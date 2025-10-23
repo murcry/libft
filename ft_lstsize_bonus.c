@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 16:32:48 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/23 20:32:41 by digonza2         ###   ########.fr       */
+/*   Created: 2025/10/23 20:35:03 by digonza2          #+#    #+#             */
+/*   Updated: 2025/10/23 20:42:45 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /*
- * Add the 'new' element at the front of the list.
- * lst: pointer address to the first element of the list
- * new: pointer address of the new element to add to the list
- * Returns nothing
+ * Count the number of elements of the list.
+ * lst: start of the list
+ * Returns the size of the list
  */
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	if (lst != NULL && new != NULL)
+	int	i;
+
+	i = 0;
+	while (lst != NULL)
 	{
-		new->next = *lst;
-		*lst = new;
+		i++;
+		lst = lst->next;
 	}
+	return (i);
 }

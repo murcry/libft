@@ -6,7 +6,7 @@
 #    By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/17 11:55:15 by digonza2          #+#    #+#              #
-#    Updated: 2025/10/23 16:27:26 by digonza2         ###   ########.fr        #
+#    Updated: 2025/10/23 21:01:40 by digonza2         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,10 +48,10 @@ FUNCTIONS = ft_isalpha.c \
 			ft_putnbr_fd.c
 
 BONUS_FUNCTIONS =	ft_lstnew_bonus.c \
-					#ft_lstadd_front_bonus.c \
-					#ft_lstsize_bonus.c \
-					#ft_lstlast_bonus.c \
-					#ft_lstadd_back_bonus.c \
+					ft_lstadd_front_bonus.c \
+					ft_lstsize_bonus.c \
+					ft_lstlast_bonus.c \
+					ft_lstadd_back_bonus.c \
 					#ft_lstdelone_bonus.c \
 					#ft_lstclear_bonus.c \
 					#ft_lstiter_bonus.c \

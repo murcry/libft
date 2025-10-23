@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/23 16:32:09 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/23 20:52:27 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -381,5 +381,29 @@ t_list	*ft_lstnew(void *content);
  */
 
 void	ft_lstadd_front(t_list **lst, t_list *new);
+
+/*
+ * Count the number of elements of the list
+ * lst: start of the list
+ * Returns the size of the list
+ */
+
+int		ft_lstsize(t_list *lst);
+
+/*
+ * Returns the last element of the list
+ * lst: the start of the list
+ */
+
+t_list	*ft_lstlast(t_list *lst);
+
+/*
+ * Add the 'new' element at the end of the list
+ * lst: pointer address of the first element of the list
+ * new: pointer address of the new element to add to the list
+ * Returns nothing
+ */
+
+void	ft_lstadd_back(t_list **lst, t_list *new);
 
 #endif
