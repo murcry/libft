@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/23 14:31:38 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:32:09 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -372,5 +372,14 @@ void	ft_putnbr_fd(int n, int fd);
  */
 
 t_list	*ft_lstnew(void *content);
+
+/*
+ * Add the 'new' element at the front of the list.
+ * lst: pointer address to the first element of the list
+ * new: pointer address of the new element to add to the list
+ * Returns nothing
+ */
+
+void	ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif

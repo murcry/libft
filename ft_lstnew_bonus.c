@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 12:14:36 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/23 12:33:58 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/23 16:24:41 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
+	t_list	*packet;
+
+	packet = malloc(sizeof(t_list));
+	if (packet == NULL)
+		return (NULL);
+	packet->content = content;
+	packet->next = NULL;
+	return (packet);
 }
