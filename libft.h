@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/22 12:49:25 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/10/23 14:31:38 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -362,5 +362,15 @@ void	ft_putendl_fd(char *s, int fd);
  */
 
 void	ft_putnbr_fd(int n, int fd);
+
+/*
+ * Allocate (with malloc()) and return the new element. The member variable
+ * 'content' is initialized with the value of the 'content' parameter.
+ * The 'next' variable is initialized to NULL.
+ * content: The content of the new element
+ * Return the new element.
+ */
+
+t_list	*ft_lstnew(void *content);
 
 #endif
