@@ -6,17 +6,18 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:46:30 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/15 21:06:58 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:40:52 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * Returns the position of the first element in an array that is not a blank or
- * space character.
+/**
+ * @brief Returns the position of the first element in an array that is not a 
+ * blank or space character.
+ * @param nptr The string (or array) to be scanned.
+ * @return The index (position) of the first non-space character.
  */
-
 static int	is_space(const char *nptr)
 {
 	int	position;
@@ -28,11 +29,14 @@ static int	is_space(const char *nptr)
 	return (position);
 }
 
-/*
- * It returns 0 if the number is positive and 1 if the number is positive with
- * '+' and 2 if the number is negative.
+/**
+ * @brief Determines the sign of the number based on the character at 'position'.
+ *
+ * @param nptr The string containing the number representation.
+ * @param position The index in 'nptr' where the sign or number begins.
+ * @return 0 if the number is positive (no sign), 1 if it is positive with 
+ * a '+', and 2 if it is negative.
  */
-
 static int	sign(const char *nptr, int position)
 {
 	int	sign;
@@ -45,11 +49,6 @@ static int	sign(const char *nptr, int position)
 		sign = 0;
 	return (sign);
 }
-
-/*
- * The atoi() function converts the initial portion of the string pointed to by
- * str to int representation. Convert ASCII string to integer
- */
 
 int	ft_atoi(const char *nptr)
 {
@@ -73,13 +72,3 @@ int	ft_atoi(const char *nptr)
 		num *= -1;
 	return (num);
 }
-
-/* int	main(void)
-{
-	int		num;
-	char	number[] = "     -5694";
-
-	num = ft_atoi(number);
-	printf("%d", num);
-	return (0);
-} */

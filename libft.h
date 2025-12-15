@@ -6,7 +6,7 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 12:45:44 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/24 14:39:49 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:52:25 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,428 +24,420 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-/*
- * The isalpha() function tests for any character for which isupper() or
- * islower() is true. The value of the argument must be resprensentable as an
- * unsigned char or the value of EOF.
- * The isalpha() function return zero if the character tests false and returns
- * non-zero if the character tests true.
+/**
+ * @brief Tests for any character for which isupper(3) or islower(3) is true.
+ *
+ * @param c The character to test.
+ * @return Non-zero if the character is an alphabetic character, zero otherwise.
  */
-
 int		ft_isalpha(int c);
 
-/* 
- * The isdigit() function tests for a decimal digit character. The value of the
- * argument must be representable as an unsigned char or the value of EOF.
- * The isdigit() function return zero if the character tests false and return
- * non-zero if the character tests true.
+/**
+ * @brief Tests for a decimal digit character.
+ *
+ * @param c The character to test.
+ * @return Non-zero if the character is a digit, zero otherwise.
  */
-
 int		ft_isdigit(int c);
 
-/*
- * The isalnum() function tests for any character for which isalpha() or
- * isdigit() is true. The value of the argument must be representable as an
- * unsigned char or the value of EOF.
+/**
+ * @brief Tests for any character for which isalpha(3) or isdigit(3) is true.
+ *
+ * @param c The character to test.
+ * @return Non-zero if the character is alphanumeric, zero otherwise.
  */
-
 int		ft_isalnum(int c);
 
-/*
- * The isascii() function tests for an ASCII character, which is any character
- * between 0 and octal 0177 inclusive.
+/**
+ * @brief Tests for an ASCII character, which is any character between 0 and 
+ * octal 0177 inclusive.
+ *
+ * @param c The character to test.
+ * @return Non-zero if the character is a 7-bit US-ASCII character code, 
+ * zero otherwise.
  */
-
 int		ft_isascii(int c);
 
-/*
- * The isprint() function tests for any printing character, including space.
- * The value of the argument must representable as an unsigned char or the value
- * of EOF. The isprint() function returns zero if the character tests false and
- * returns non-zero if the character tests true.
+/**
+ * @brief Tests for any printing character, including space.
+ *
+ * @param c The character to test.
+ * @return Non-zero if the character is printable, zero otherwise.
  */
-
 int		ft_isprint(int c);
 
-/*
- * The strlen() function computes the length of the string s. The strlen()
- * function returns the number of characters that precede the terminating NUL
- * character.
+/**
+ * @brief Computes the length of the string s.
+ *
+ * @param s The string to measure.
+ * @return The number of characters that precede the terminating NUL character.
  */
-
 size_t	ft_strlen(const char *s);
 
-/*
- * The memset() function writes len bytes of value c (converted to an unsigned
- * char) to the string b. The memset() function returns its first argument.
+/**
+ * @brief Writes len bytes of value c (converted to an unsigned char) to the 
+ * string b.
+ *
+ * @param s The pointer to the memory area.
+ * @param c The value to be set.
+ * @param n The number of bytes to be set.
+ * @return A pointer to the memory area s.
  */
-
 void	*ft_memset(void *s, int c, size_t n);
 
-/*
- * The bzero() function writes n zeroed bytes to the string s. If n is zero,
- * bzero() does nothing.
+/**
+ * @brief Writes n zeroed bytes to the string s. If n is zero, bzero() does 
+ * nothing.
+ *
+ * @param s The pointer to the memory area.
+ * @param n The number of bytes to zero.
  */
-
 void	ft_bzero(void *s, size_t n);
 
-/*
- * The memcpy() function copies n bytes from memory area src to memory area dest.
- * If dest and src overlap, behavior is undefined. Applications in which dest and
- * src might overlap should use memove() instead. The memcpy() function returns
- * the original value of dest.
+/**
+ * @brief Copies n bytes from memory area src to memory area dest.
+ * 
+ * The memory areas must not overlap. Use ft_memmove() if the memory areas do 
+ * overlap.
+ * @param dest The pointer to the destination memory area.
+ * @param src The pointer to the source memory area.
+ * @param n The number of bytes to copy.
+ * @return A pointer to dest.
  */
-
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 
-/*
- * The memmove() function copies n bytes from string src to string dest.
+/**
+ * @brief Copies n bytes from string src to string dest.
+ * 
  * The two strings may overlap; the copy is always done in a non-destructive
- *  manner. The memmove() function returns the original value of dest.
+ * manner.
+ * @param dest The pointer to the destination memory area.
+ * @param src The pointer to the source memory area.
+ * @param n The number of bytes to copy.
+ * @return A pointer to dest.
  */
-
 void	*ft_memmove(void *dest, const void *src, size_t n);
 
-/*
- * The strlcpy() function copy strings with the same input parameters and output
- * result as snprintf(). It is designed to be safer, more consistent, and less
- * error prone replacement for the easily misused function strncpy() strlcpy()
- * take the full size of the destination buffer and guarantee NUL-termination if
- * there is room. Note that room for the NUL should be included in dstsize. Also
- * note that strlcpy() only operate on true ''C'' strings. This means that for
- * strlcpy() src must be NUL-terminated. strlcpy() copies up to dstsize - 1
- * characters from the string src to dst, NUL-terminating the result if dstsize
- * is not 0. If the src and dst strings overlap, the behavior is undefined.
- * The strlcpy() function return the total length of the strings it tried to
- * create. That means the length of src. If the return value is >= dstsize, the
- * output string has been truncated. It is the caller's responsibility to handle
- * this.
+/**
+ * @brief Size-bounded string copying.
+ * 
+ * Copies up to dstsize - 1 characters from the string src to dst, 
+ * NUL-terminating the result if dstsize is not 0.
+ * @param dest The destination buffer.
+ * @param src The source string.
+ * @param dstsize The full size of the destination buffer.
+ * @return The total length of the string it tried to create (length of src).
  */
-
 size_t	ft_strlcpy(char *dest, const char *src, size_t dstsize);
 
-/*
- * The strlcat() function concatenate strings with the same input parameters and
- * outuput result as snprintf(). It is designed to be safer, more consistent, and
- * less error prone replacements for the easily misused function strncat().
- * strlcat() take the full size of the destination buffer and guarantee
- * NUL-termination if there is room. Note that room for the NUL should be
- * included in dstsize. Also note that strlcat() only operate on true ''C''
- * strings. This means that both src and dst must be NUL-terminated.
- * strlcat() appends string src to the end of dst. It will append at most
- * dstsize - strlen(dst) - 1 characters. It will then NUL-terminate, unless
- * dstsize is 0 or the original dst string was longer than dstsize (in practice
- * this should not happen as it means that either dstsize is incorrect or that
- * dst is not a proper string).
- *  If the src and dst strings overlap, the behavior is undefinded.
- * Like snprintf(), strlcat() function return the total length of the string it
- * tried to create. That means the initial length of dst plus the length of src.
- * If the return value is >= dstsize, the output string has been truncated.
- * It is the caller's responsibility to handle this.
+/**
+ * @brief Size-bounded string concatenation.
+ * 
+ * Appends string src to the end of dst. It will append at most 
+ * dstsize - strlen(dst) - 1 characters. It will then NUL-terminate, unless 
+ * dstsize is 0 or the original dst string was longer than dstsize.
+ * @param dst The destination string.
+ * @param src The string to be appended.
+ * @param size The full size of the destination buffer.
+ * @return The total length of the string it tried to create (initial length of 
+ * dst + length of src).
  */
-
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
-/*
- * If  c is a lowercase letter, toupper() returns its uppercase equivalent, 
- * if an uppercase representation exists in the current locale.  Otherwise,
- * it returns c.
+/**
+ * @brief Converts a lower-case letter to the corresponding upper-case letter.
+ *
+ * @param c The character to convert.
+ * @return The converted letter, or c if the conversion was not possible.
  */
-
 int		ft_toupper(int c);
 
-/*
- * If  c is an uppercase letter, tolower() returns its lowercase equivalent,
- * if a lowercase representation exists in the current locale.  Otherwise,
- * it returns c
+/**
+ * @brief Converts an upper-case letter to the corresponding lower-case letter.
+ *
+ * @param c The character to convert.
+ * @return The converted letter, or c if the conversion was not possible.
  */
-
 int		ft_tolower(int c);
 
-/*
- * The strchr() function returns a pointer to the first occurrence of the 
- * character c in the string s
+/**
+ * @brief Locates the first occurrence of character c in string s.
+ *
+ * @param s The string to search.
+ * @param c The character to locate.
+ * @return A pointer to the first occurrence of the character c in the string s, 
+ * or NULL if the character is not found.
  */
-
 char	*ft_strchr(const char *s, int c);
 
-/*
- * The strrchr() function returns a pointer to the last occurrence of the
- * character c in the string s
+/**
+ * @brief Locates the last occurrence of character c in string s.
+ *
+ * @param s The string to search.
+ * @param c The character to locate.
+ * @return A pointer to the last occurrence of the character c in the string s, 
+ * or NULL if the character is not found.
  */
-
 char	*ft_strrchr(const char *s, int c);
 
-/*
- * The  strcmp()  function compares the two strings s1 and s2. The  strcmp()
- * function compares the two strings s1 and s2. The strcmp() and strncmp()
- * functions return an integer less than, equal to, or greater than zero if s1
- * (or the first n bytes thereof) is found, respectively, to be less than, to
- * match, or be greater than s2.
-*/
-
+/**
+ * @brief Compares not more than n characters of the two strings s1 and s2.
+ *
+ * @param s1 The first string to compare.
+ * @param s2 The second string to compare.
+ * @param n The maximum number of characters to compare.
+ * @return An integer less than, equal to, or greater than zero if s1 is found, 
+ * respectively, to be less than, to match, or be greater than s2.
+ */
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 
-/*
- * The memchr() function scans the initial n bytes of the memory area pointed
- * to by s for the first instance of c. Both c and the bytes of the memory
- * area pointed to by s are interpreted as unsigned char. The  memchr() and
- * memrchr() functions return a pointer to the matching byte or NULL if the
- * character does not occur in the given memory area.
+/**
+ * @brief Scans the initial n bytes of the memory area pointed to by s for the 
+ * first instance of c.
+ *
+ * @param s The memory area to scan.
+ * @param c The character to search for.
+ * @param n The number of bytes to scan.
+ * @return A pointer to the matching byte or NULL if the character does not 
+ * occur in the given memory area.
  */
-
 void	*ft_memchr(const void *s, int c, size_t n);
 
-/*
- * The  memcmp()  function  compares the first n bytes (each interpreted as
- * unsigned char) of the memory areas s1 and s2. The memcmp() function returns
- * an integer less than, equal to, or greater than zero if  the first  n bytes
- * of s1 is found, respectively, to be less than, to match, or be greater than
- * the first n bytes of s2.
- * For a nonzero return value, the sign is determined by the sign of the
- * difference  between the first pair of bytes (interpreted as unsigned char)
- * that differ in s1 and s2.
- * If n is zero, the return value is zero.
+/**
+ * @brief Compares the first n bytes of the memory areas s1 and s2.
+ *
+ * @param s1 The first memory area.
+ * @param s2 The second memory area.
+ * @param n The number of bytes to compare.
+ * @return An integer less than, equal to, or greater than zero if the first n 
+ * bytes of s1 is found, respectively, to be less than, to match, or be greater 
+ * than the first n bytes of s2.
  */
-
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 
-/*
- * The strnstr() function locates the first occurence of the null-terminated
- * string little in the string big, where not more than len characters are
- * searched.
- * Characters that appear after a '\0' character are not searched.
- * If little is an empty string, big is returned; if little occurs nowhere in
- * big, NULL is returned; otherwise a pointer to the first character of the
- * first occurence of little is returned.
+/**
+ * @brief Locates the first occurrence of the null-terminated string little in 
+ * the string big, where not more than len characters are searched.
+ *
+ * @param big The string to be searched.
+ * @param little The substring to search for.
+ * @param len The maximum number of characters to search.
+ * @return A pointer to the first character of the first occurrence of little 
+ * is returned. NULL if the substring is not found.
  */
-
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 
-/*
- * The atoi() function converts the initial portion of the string pointed to by
- * str to int representation. Convert ASCII string to integer
+/**
+ * @brief Converts the initial portion of the string pointed to by nptr to int 
+ * representation.
+ *
+ * @param nptr The string to convert.
+ * @return The converted integer value.
  */
-
 int		ft_atoi(const char *nptr);
 
-/*
- * The calloc() function allocates memory for an array of nmemb elements of size
- * bytes  each and returns a pointer to the allocated memory. The memory is set
- * to zero. If nmemb or size is 0, then calloc() returns either NULL, or a unique
- * pointer value that can later be successfully  passed  to  free().If the
- * multiplication of nmemb and size would result in integer overflow, then
- * calloc() returns an error. By contrast, an integer overflow  would not be
- * detected in the following call to malloc(), with the result that
- * an incorrectly sized block of memory would be allocated:
- * 	malloc(nmemb * size);
+/**
+ * @brief Allocates memory for an array of nmemb elements of size bytes each.
+ * The memory is set to zero.
+ *
+ * @param nmemb The number of elements.
+ * @param size The size of each element.
+ * @return A pointer to the allocated memory, or NULL if the request fails.
  */
-
 void	*ft_calloc(size_t nmemb, size_t size);
 
-/*
- * The strdup() function returns a pointer to a new string which is a duplicate
- * of the string s. Memory for the new string is obtained with malloc(), and
- * can be freed with free().
- * On  success, the strdup() function returns a pointer to the duplicated string.
- * It returns NULL if insufficient memory was available, with errno set to
- * indicate the cause of the error.
+/**
+ * @brief returns a pointer to a new string which is a duplicate of the string s.
+ * Memory for the new string is obtained with malloc(3).
+ *
+ * @param s The string to duplicate.
+ * @return A pointer to the duplicated string, or NULL if insufficient memory 
+ * was available.
  */
+char	*ft_strdup(const char *s);
 
-char	*ft_strdup(const char *s);	//TODO
-
-/*
- * Allocate (with malloc()) and return a new string from the string s.
- * This new string starts at index 'start' and has a maximum size of 'len'.
- * s: string from which to extract the new string
- * start: start index of the new string in the string 's'
- * len: maximum size of the new string
- * ft_substr() returns the new string; NULL if the memory allocation failed.
+/**
+ * @brief Allocates (with malloc(3)) and returns a substring from the string 's'.
+ * 
+ * The substring begins at index 'start' and is of maximum size 'len'.
+ * @param s The string from which to create the substring.
+ * @param start The start index of the substring in the string 's'.
+ * @param len The maximum length of the substring.
+ * @return The substring. NULL if the allocation fails.
  */
-
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 
-/*
- * Allocate (with malloc()) and returns a new string resulting from the
- * concatenation of s1 and s2.
- * s1: prefix string
- * s2: suffix string
- * ft_strjoin() returns the new string; NULL if the memory allocation failed.
+/**
+ * @brief Allocates (with malloc(3)) and returns a new string resulting from the
+ * concatenation of 's1' and 's2'.
+ * @param s1 The prefix string.
+ * @param s2 The suffix string.
+ * @return The new string, or NULL if the memory allocation failed.
  */
-
 char	*ft_strjoin(char const *s1, char const *s2);
 
-/*
- * Allocate (with malloc()) and returns a copy of s1, without the characters
- * specified in set at the beginning and the end of s1.
- * s1: string to trim
- * set: characters to trim
- * ft_strtrim() returns a trimmed copy of s1; NULL if the memory allocation
- * failed.
+/**
+ * @brief Allocates (with malloc(3)) and returns a copy of 's1' with the 
+ * characters specified in 'set' removed from the beginning and the end of the 
+ * string.
+ * @param s1 The string to be trimmed.
+ * @param set The reference set of characters to trim.
+ * @return The trimmed string. NULL if the allocation fails.
  */
-
 char	*ft_strtrim(char const *s1, char const *set);
 
-/*
- * Allocate (with malloc()) and returns an array of strings obtained by
- * splittings with the character c, used as delimiter.
- * The returned array must be NUL-terminated.
- * s: string to split
- * c: delimiter character
- * ft_split() returns an array of strings resulting from the splitting of s;
- * NULL if the memory allocation failed.
+/**
+ * @brief Allocates (with malloc(3)) and returns an array of strings obtained 
+ * by splitting 's' using the character 'c' as a delimiter. The array must end 
+ * with a NULL pointer.
+ * @param s The string to be split.
+ * @param c The delimiter character.
+ * @return The array of new strings resulting from the split. NULL if the 
+ * allocation fails.
  */
-
 char	**ft_split(char const *s, char c);
 
-/*
- * Allocate (with malloc()) and returns a string representing n. Negative
- * numbers must be handled.
- * Returns the string representing n; NULL if the memory allocation failed.
+/**
+ * @brief Allocates (with malloc(3)) and returns a string representing the 
+ * integer received as an argument. Negative numbers must be handled.
+ * @param n The integer to convert.
+ * @return The string representing the integer. NULL if the allocation fails.
  */
-
 char	*ft_itoa(int n);
 
-/*
- * This function iterates through the string 's', applying 'f' to each
- * character and its index, and stores the results in a newly allocated string.
- * s: The string to iterate over.
- * f: The function to apply to each character.
- * Returns a pointer to the new string created from the successive applications
- * of 'f', or NULL if the memory allocation fails.
+/**
+ * @brief Applies the function 'f' to each character of the string 's', and 
+ * passing its index as first argument to create a new string (with malloc(3)) 
+ * resulting from successive applications of 'f'.
+ * @param s The string on which to iterate.
+ * @param f The function to apply to each character.
+ * @return The string created from the successive applications of 'f'. 
+ * Returns NULL if the allocation fails.
  */
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-/*
- * This function iterates through the string 's', passing the index of each
- * character and a pointer to the character itself to the function 'f'.
- * This allows for in-place modification of the string.
- * s: The string to iterate over.
- * f: The function to apply to each character.
- * Returns nothing.
+/**
+ * @brief Applies the function 'f' on each character of the string passed as 
+ * argument, passing its index as first argument. Each character is passed by 
+ * address to 'f' to be modified if necessary.
+ * @param s The string on which to iterate.
+ * @param f The function to apply to each character.
  */
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-/*
- * Outputs the character ’c’ to the given file descriptor.
- * c: The character to output.
- * fd: The file descriptor on which to write.
- * Returns nothing.
+/**
+ * @brief Outputs the character 'c' to the given file descriptor.
+ * @param c The character to output.
+ * @param fd The file descriptor on which to write.
  */
-
 void	ft_putchar_fd(char c, int fd);
 
-/*
- * Outputs the string 's' to the given file descriptor.
- * s: The string to output.
- * fd: The file descriptor on which to write.
- * Returns nothing.
+/**
+ * @brief Outputs the string 's' to the given file descriptor.
+ * @param s The string to output.
+ * @param fd The file descriptor on which to write.
  */
-
 void	ft_putstr_fd(char *s, int fd);
 
-/*
- * Outputs the string 's' to the given file descriptor followed by a newline.
- * s: The string to output.
- * fd: The file descriptor on which to write.
- * Returns nothing
+/**
+ * @brief Outputs the string 's' to the given file descriptor followed by a 
+ * newline.
+ *
+ * @param s The string to output.
+ * @param fd The file descriptor on which to write.
  */
-
 void	ft_putendl_fd(char *s, int fd);
 
-/*
- * Outputs the integer 'n' to the given file descriptor.
- * n: The integer to output.
- * fd: The file descriptor on which to write.
+/**
+ * @brief Outputs the integer 'n' to the given file descriptor.
+ *
+ * @param n The integer to output.
+ * @param fd The file descriptor on which to write.
  */
-
 void	ft_putnbr_fd(int n, int fd);
 
-/*
- * Allocate (with malloc()) and return the new element. The member variable
- * 'content' is initialized with the value of the 'content' parameter.
- * The 'next' variable is initialized to NULL.
- * content: The content of the new element
- * Return the new element.
+/**
+ * @brief Allocates (with malloc(3)) and returns a new node.
+ * The member variable 'content' is initialized with the value of the parameter 
+ * 'content'. The variable 'next' is initialized to NULL.
+ *
+ * @param content The content to create the new node with.
+ * @return The new node.
  */
-
 t_list	*ft_lstnew(void *content);
 
-/*
- * Add the 'new' element at the front of the list.
- * lst: pointer address to the first element of the list
- * new: pointer address of the new element to add to the list
- * Returns nothing
+/**
+ * @brief Adds the node 'new' at the beginning of the list.
+ *
+ * @param lst The address of a pointer to the first link of a list.
+ * @param new The node to be added to the list.
  */
-
 void	ft_lstadd_front(t_list **lst, t_list *new);
 
-/*
- * Count the number of elements of the list
- * lst: start of the list
- * Returns the size of the list
+/**
+ * @brief Counts the number of nodes in a list.
+ *
+ * @param lst The beginning of the list.
+ * @return The length of the list.
  */
-
 int		ft_lstsize(t_list *lst);
 
-/*
- * Returns the last element of the list
- * lst: the start of the list
+/**
+ * @brief Returns the last node of the list.
+ *
+ * @param lst The beginning of the list.
+ * @return The last node of the list.
  */
-
 t_list	*ft_lstlast(t_list *lst);
 
-/*
- * Add the 'new' element at the end of the list
- * lst: pointer address of the first element of the list
- * new: pointer address of the new element to add to the list
- * Returns nothing
+/**
+ * @brief Adds the node 'new' at the end of the list.
+ *
+ * @param lst The address of a pointer to the first link of a list.
+ * @param new The node to be added to the list.
  */
-
 void	ft_lstadd_back(t_list **lst, t_list *new);
 
-/*
- * Free the memory of the element passed as parameter using the 'del' function
- * then free(). The memory of 'next' must not be freed.
- * lst: the element to free
- * del: address of the function that can delete the element's content
- * Returns nothing
+/**
+ * @brief Takes as a parameter a node and frees the memory of the node's 
+ * content using the function 'del' given as a parameter and free the node. 
+ * The memory of 'next' must not be freed.
+ *
+ * @param lst The node to free.
+ * @param del The address of the function used to delete the content.
  */
-
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 
-/*
- * Deletes and free the memory of the element passed as parameter and all the
- * following elements using 'del' and free(3). Finally, the initial pointer must
- * be set to NULL.
- * lst: pointer address to one element
- * del: address of the function that can delete the element's content
- * Returns nothing
+/**
+ * @brief Deletes and frees the given node and every successor of that node, 
+ * using the function 'del' and free(3).
+ * 
+ * Finally, the pointer to the list must be set to NULL.
+ * @param lst The address of a pointer to a node.
+ * @param del The address of the function used to delete the content of the node.
  */
-
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 
-/*
- * Iterate over the list 'lst' and apply the function 'f' to the content of all
- * elements.
- * lst: pointer address to one element
- * f: function to apply
- * Returns nothing
+/**
+ * @brief Iterates the list 'lst' and applies the function 'f' on the content of 
+ * each node.
+ *
+ * @param lst The address of a pointer to a node.
+ * @param f The address of the function used to iterate on the list.
  */
-
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 
-/*
- * Iterate over the list 'lst' and apply the function 'f' to the content of each
- * elements. Create a new list resulting of the successive applications of 'f'.
- * The function 'del' is used to destroy the content of an element if necessary.
- * lst: pointer address to one element
- * f: the address of the function to apply
- * del: the address of the function that can delete an element's content
- * It returns the new lst*/
-
+/**
+ * @brief Iterates the list 'lst' and applies the function 'f' on the content of 
+ * each node. Creates a new list resulting of the successive applications of 
+ * the function 'f'. The 'del' function is used to delete the content of a node 
+ * if needed.
+ * @param lst The address of a pointer to a node.
+ * @param f The address of the function used to iterate on the list.
+ * @param del The address of the function used to delete the content of a node 
+ * if needed.
+ * @return The new list. NULL if the allocation fails.
+ */
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

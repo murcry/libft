@@ -6,16 +6,19 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:05:41 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/17 19:38:29 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/15 17:49:44 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
- * Join the two strings s1 and s2 into joined
+/**
+ * @brief Joins the two strings 's1' and 's2' into the 'joined' buffer.
+ *
+ * @param joined The destination buffer where the result is stored.
+ * @param s1 The first string to be copied.
+ * @param s2 The second string to be appended.
  */
-
 static void	ft_join(char *joined, char const *s1, char const *s2)
 {
 	size_t	i;
@@ -35,14 +38,6 @@ static void	ft_join(char *joined, char const *s1, char const *s2)
 	}
 	joined[i + j] = '\0';
 }
-
-/*
- * Allocate (with malloc()) and returns a new string resulting from the
- * concatenation of s1 and s2.
- * s1: prefix string
- * s2: suffix string
- * ft_strjoin() returns the new string; NULL if the memory allocation failed.
- */
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

@@ -6,12 +6,19 @@
 /*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:45:53 by digonza2          #+#    #+#             */
-/*   Updated: 2025/10/20 13:09:55 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/15 19:56:26 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Checks if the character 'c' is present in the string 'set'.
+ *
+ * @param c The character to search for.
+ * @param set The set of reference characters.
+ * @return 1 if 'c' is found in 'set', 0 otherwise.
+ */
 static int	is_char_in_str(const char c, const char *set)
 {
 	int	i;
@@ -26,6 +33,14 @@ static int	is_char_in_str(const char c, const char *set)
 	return (0);
 }
 
+/**
+ * @brief Calculates the starting index of the string after trimming
+ * leading characters found in 'set'.
+ *
+ * @param s1 The string to be trimmed.
+ * @param set The set of characters to be removed.
+ * @return The index of the first character in 's1' that is not in 'set'.
+ */
 static size_t	get_start(const char *s1, const char *set)
 {
 	size_t	i;
@@ -36,6 +51,14 @@ static size_t	get_start(const char *s1, const char *set)
 	return (i);
 }
 
+/**
+ * @brief Calculates the ending index of the string after trimming
+ * trailing characters found in 'set'.
+ *
+ * @param s1 The string to be trimmed.
+ * @param set The set of characters to be removed.
+ * @return The index of the last character in 's1' that is not in 'set'.
+ */
 static size_t	get_end(const char *s1, const char *set)
 {
 	int	j;
@@ -47,15 +70,6 @@ static size_t	get_end(const char *s1, const char *set)
 		j = 0;
 	return (j);
 }
-
-/*
- * Allocate (with malloc()) and returns a copy of s1, without the characters
- * specified in set at the beginning and the end of s1.
- * s1: string to trim
- * set: characters to trim
- * ft_strtrim() returns a trimmed copy of s1; NULL if the memory allocation
- * failed.
- */
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
