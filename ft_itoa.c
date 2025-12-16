@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/06 16:23:09 by digonza2          #+#    #+#             */
-/*   Updated: 2025/12/15 17:33:19 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:05:57 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,12 @@ static size_t	num_size(long n)
 	return (size);
 }
 
+/**
+ * @brief Allocates (with malloc(3)) and returns a string representing the 
+ * integer received as an argument. Negative numbers must be handled.
+ * @param n The integer to convert.
+ * @return The string representing the integer. NULL if the allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	char	*num;

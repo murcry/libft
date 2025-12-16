@@ -3,15 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:54:28 by digonza2          #+#    #+#             */
-/*   Updated: 2025/12/15 17:50:08 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:00:16 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Size-bounded string concatenation.
+ * 
+ * Appends string src to the end of dst. It will append at most 
+ * dstsize - strlen(dst) - 1 characters. It will then NUL-terminate, unless 
+ * dstsize is 0 or the original dst string was longer than dstsize.
+ * @param dst The destination string.
+ * @param src The string to be appended.
+ * @param size The full size of the destination buffer.
+ * @return The total length of the string it tried to create (initial length of 
+ * dst + length of src).
+ */
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	srclen;

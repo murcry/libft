@@ -3,15 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 21:18:36 by digonza2          #+#    #+#             */
-/*   Updated: 2025/12/15 17:57:21 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:00:54 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/**
+ * @brief Converts a lower-case letter to the corresponding upper-case letter.
+ *
+ * @param c The character to convert.
+ * @return The converted letter, or c if the conversion was not possible.
+ */
 int	ft_toupper(int c)
 {
 	int	change;

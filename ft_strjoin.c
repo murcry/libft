@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:05:41 by digonza2          #+#    #+#             */
-/*   Updated: 2025/12/15 17:49:44 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:04:51 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,13 @@ static void	ft_join(char *joined, char const *s1, char const *s2)
 	joined[i + j] = '\0';
 }
 
+/**
+ * @brief Allocates (with malloc(3)) and returns a new string resulting from the
+ * concatenation of 's1' and 's2'.
+ * @param s1 The prefix string.
+ * @param s2 The suffix string.
+ * @return The new string, or NULL if the memory allocation failed.
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	s1_len;

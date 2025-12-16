@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:15:02 by digonza2          #+#    #+#             */
-/*   Updated: 2025/12/15 17:30:25 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:05:41 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,6 +128,15 @@ static char	**ft_fill_list(char **list, const char *s, char c)
 	return (list);
 }
 
+/**
+ * @brief Allocates (with malloc(3)) and returns an array of strings obtained 
+ * by splitting 's' using the character 'c' as a delimiter. The array must end 
+ * with a NULL pointer.
+ * @param s The string to be split.
+ * @param c The delimiter character.
+ * @return The array of new strings resulting from the split. NULL if the 
+ * allocation fails.
+ */
 char	**ft_split(char const *s, char c)
 {
 	size_t	elements_num;

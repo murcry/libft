@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 19:45:53 by digonza2          #+#    #+#             */
-/*   Updated: 2025/12/15 19:56:26 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:05:06 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,14 @@ static size_t	get_end(const char *s1, const char *set)
 	return (j);
 }
 
+/**
+ * @brief Allocates (with malloc(3)) and returns a copy of 's1' with the 
+ * characters specified in 'set' removed from the beginning and the end of the 
+ * string.
+ * @param s1 The string to be trimmed.
+ * @param set The reference set of characters to trim.
+ * @return The trimmed string. NULL if the allocation fails.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;

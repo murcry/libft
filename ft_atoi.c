@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: digonza2 <digonza2@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: digonza2 <digonza2@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 16:46:30 by digonza2          #+#    #+#             */
-/*   Updated: 2025/12/15 17:40:52 by digonza2         ###   ########.fr       */
+/*   Updated: 2025/12/16 12:03:36 by digonza2         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,13 @@ static int	sign(const char *nptr, int position)
 	return (sign);
 }
 
+/**
+ * @brief Converts the initial portion of the string pointed to by nptr to int 
+ * representation.
+ *
+ * @param nptr The string to convert.
+ * @return The converted integer value.
+ */
 int	ft_atoi(const char *nptr)
 {
 	int	i;
